@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     private val smsVerificationReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             if (SmsRetriever.SMS_RETRIEVED_ACTION == intent.action) {
+
                 val extras = intent.extras
                 val smsRetrieverStatus = extras?.get(SmsRetriever.EXTRA_STATUS) as Status
 
